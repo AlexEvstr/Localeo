@@ -14,6 +14,7 @@ public class ProfileView : MonoBehaviour
     [SerializeField] private InputField inputName;
     [SerializeField] private Transform avatarChooseRoot;
     [SerializeField] private InputField inputPlaces;
+    [SerializeField] private Text _placesNumber;
     [SerializeField] private Button saveBtn;
     //[SerializeField] private Button closeBtn;
 
@@ -38,6 +39,12 @@ public class ProfileView : MonoBehaviour
 
     private void Start()
     {
+        inputPlaces.contentType = InputField.ContentType.IntegerNumber;
+        inputPlaces.onValidateInput += (text, charIndex, addedChar) =>
+        {
+            return char.IsDigit(addedChar) ? addedChar : '\0';
+        };
+
         editBtn.onClick.AddListener(() =>
         {
             editPanel.SetActive(true);
@@ -95,6 +102,9 @@ public class ProfileView : MonoBehaviour
         }
 
         nameText.text = _profile.Name;
+
+        if (_placesNumber != null)
+            _placesNumber.text = _profile.Places;
 
         if (avatarSprites.Length > _profile.AvatarIndex)
         {
