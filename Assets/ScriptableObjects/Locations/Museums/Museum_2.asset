@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380cffe1b379349da9c95494224d6722, type: 3}
+  m_Name: Museum_2
+  m_EditorClassIdentifier: 
+  id: museum_2
+  title: Tate Modern
+  description: A temple of contemporary art in a former power station with works
+    by Warhol, Hockney and installations.
+  subtitle: 
+  category: 2
+  thumbnailImage: {fileID: 21300000, guid: dea1a750742d9431288da6e86bb02836, type: 3}
+  detailImage: {fileID: 21300000, guid: 620756505c78944ec9c00a83da688334, type: 3}
+  featureImage: {fileID: 21300000, guid: cbd8f95714a1a49f1b0f941da8e072a8, type: 3}
+  fakeReviews:
+  - authorName: Yusuf
+    avatarIndex: 8
+    text: The rooftop overlooking the Thames is the best in town! I love their temporary
+      exhibitions.
+  - authorName: Maya
+    avatarIndex: 9
+    text: Some of the exhibits are too abstract, I didn't understand the meaning.

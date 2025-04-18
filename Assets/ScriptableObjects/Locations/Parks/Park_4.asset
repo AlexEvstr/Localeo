@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380cffe1b379349da9c95494224d6722, type: 3}
+  m_Name: Park_4
+  m_EditorClassIdentifier: 
+  id: park_4
+  title: Greenwich Park
+  description: A historical park with the Royal Observatory, where the prime meridian
+    passes. The view of the Canary Wharf is stunning!
+  subtitle: 
+  category: 1
+  thumbnailImage: {fileID: 21300000, guid: f527051720b114101bfaef87b4728ebc, type: 3}
+  detailImage: {fileID: 21300000, guid: c9e9ee43e586c4d1a82d61e49b79bf05, type: 3}
+  featureImage: {fileID: 21300000, guid: 298b19466164941b680daf0ceea524a9, type: 3}
+  fakeReviews:
+  - authorName: James
+    avatarIndex: 11
+    text: The view from the hill is worth the climb!
+  - authorName: Anna
+    avatarIndex: 1
+    text: "Park is great, but the caf\xE9 prices are too high"

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380cffe1b379349da9c95494224d6722, type: 3}
+  m_Name: Park_1
+  m_EditorClassIdentifier: 
+  id: park_1
+  title: Hyde Park
+  description: One of the largest and most famous royal parks. It features The Serpentine
+    Lake, picnic areas and the famous Speaker's Corner, where anyone can give a speech.
+  subtitle: 
+  category: 1
+  thumbnailImage: {fileID: 21300000, guid: b58a3558e30e943d4acd5271e12ef5e5, type: 3}
+  detailImage: {fileID: 21300000, guid: 2414dbf6c086041a09e96c435ebce270, type: 3}
+  featureImage: {fileID: 21300000, guid: f46d38cf8fb5f4efaab400f7d258befd, type: 3}
+  fakeReviews:
+  - authorName: David
+    avatarIndex: 2
+    text: 'Perfect for jogging and relaxing. Love the open spaces! '
+  - authorName: Emily
+    avatarIndex: 6
+    text: Too crowded on weekends, but great for a summer day out.

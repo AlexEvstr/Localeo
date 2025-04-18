@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380cffe1b379349da9c95494224d6722, type: 3}
+  m_Name: Museum_5
+  m_EditorClassIdentifier: 
+  id: museum_5
+  title: Scene Museum
+  description: Interactive exhibitions about space, technology and the future. You
+    can touch the exhibits!
+  subtitle: 
+  category: 2
+  thumbnailImage: {fileID: 21300000, guid: 573875b30229845f580f4f10dcce081b, type: 3}
+  detailImage: {fileID: 21300000, guid: f259e720147c84eb5825a2cd2e42e273, type: 3}
+  featureImage: {fileID: 21300000, guid: d6244753bf89a419b8a532234e24c4c3, type: 3}
+  fakeReviews:
+  - authorName: Kai
+    avatarIndex: 3
+    text: Spaceship Simulator - Feels Like a Movie
+  - authorName: Nia
+    avatarIndex: 4
+    text: Lots of kids, noisy. Less interesting for adults

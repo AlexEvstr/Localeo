@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380cffe1b379349da9c95494224d6722, type: 3}
+  m_Name: Park_6
+  m_EditorClassIdentifier: 
+  id: park_6
+  title: St. James's Park
+  description: The most elegant park near Buckingham Palace. Pelicans live here,
+    and the bridge over the lake is a must-see.
+  subtitle: 
+  category: 1
+  thumbnailImage: {fileID: 21300000, guid: 26db48cb02dee43fda65b4b83809b05b, type: 3}
+  detailImage: {fileID: 21300000, guid: 36f3f90442a1c429e9f9534298be1711, type: 3}
+  featureImage: {fileID: 21300000, guid: 5c25116e959994c88887dd89eaf4384c, type: 3}
+  fakeReviews:
+  - authorName: Emma
+    avatarIndex: 2
+    text: Perfect for a romantic walk. The pelicans are hilarious!
+  - authorName: Henry
+    avatarIndex: 3
+    text: Small compared to others, but very well maintained.

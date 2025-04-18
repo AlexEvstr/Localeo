@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380cffe1b379349da9c95494224d6722, type: 3}
+  m_Name: Park_3
+  m_EditorClassIdentifier: 
+  id: park_3
+  title: Richmond Park
+  description: The largest royal park with wild deer and picturesque hills. It offers
+    views of the city.
+  subtitle: 
+  category: 1
+  thumbnailImage: {fileID: 21300000, guid: cc6f29f3c6d9541d9a4194bb6ff7a5b5, type: 3}
+  detailImage: {fileID: 21300000, guid: 7fcf65d5b615e444a9c672780280a355, type: 3}
+  featureImage: {fileID: 21300000, guid: 3303ece429abd4e388bb033707657a98, type: 3}
+  fakeReviews:
+  - authorName: Tom
+    avatarIndex: 9
+    text: Feels like real wilderness in London. The deer are magical!
+  - authorName: Lisa
+    avatarIndex: 10
+    text: Cycling here is amazing, but wear comfy shoes - it's huge!
