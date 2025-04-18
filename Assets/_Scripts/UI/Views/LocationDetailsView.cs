@@ -49,6 +49,16 @@ public class LocationDetailsView : MonoBehaviour
         gameObject.SetActive(true);
         reviewFormRoot.SetActive(false);
         feedbackSent.SetActive(false);
+        // Изначально выключаем кнопку
+        sendBtn.interactable = false;
+
+        // Слушаем изменения текста
+        reviewInput.onValueChanged.RemoveAllListeners();
+        reviewInput.onValueChanged.AddListener(text =>
+        {
+            sendBtn.interactable = !string.IsNullOrWhiteSpace(text);
+        });
+        
         locationsImage.sprite = location.detailImage;
         featureImage.sprite = location.featureImage;
 

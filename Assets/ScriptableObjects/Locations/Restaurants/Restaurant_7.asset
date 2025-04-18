@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380cffe1b379349da9c95494224d6722, type: 3}
+  m_Name: Restaurant_7
+  m_EditorClassIdentifier: 
+  id: restaurant_7
+  title: Bao
+  description: A chain of restaurants serving airy "bao" buns with various fillings.
+  subtitle: Taiwanese street food
+  category: 0
+  thumbnailImage: {fileID: 21300000, guid: 94c02ca4a18f8429ba45a81903c78747, type: 3}
+  detailImage: {fileID: 21300000, guid: 238f3af487aba40c38f232b1f3d87c8d, type: 3}
+  featureImage: {fileID: 21300000, guid: 77cceb286d49d49cf8882620b1c2a7e5, type: 3}
+  fakeReviews:
+  - authorName: James
+    avatarIndex: 5
+    text: I love their fried chicken bao! Always fresh and juicy.
+  - authorName: Olivia
+    avatarIndex: 11
+    text: It's delicious, but it's eaten too quickly - you want more!
