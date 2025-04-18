@@ -17,7 +17,16 @@ MonoBehaviour:
   description: One of London's top restaurants, with two Michelin stars, the menu
     includes exquisite dishes such as venison with black truffle paste and hand-made
     desserts.
+  subtitle: Michelin star restaurant, modern European cuisine
   category: 0
   thumbnailImage: {fileID: 21300000, guid: 5af5fbae81dba4b20a878679eb372027, type: 3}
   detailImage: {fileID: 21300000, guid: 09fba3db5f7a245298549880394a7bf9, type: 3}
   featureImage: {fileID: 21300000, guid: e5eb592aa15b04994a96f11b0f207ccd, type: 3}
+  fakeReviews:
+  - authorName: Sam
+    avatarIndex: 1
+    text: An incredible gastronomic experience! The service is top notch, each dish
+      is a work of art.
+  - authorName: Tom
+    avatarIndex: 3
+    text: Very expensive, but worth it. Although the portions could be bigger

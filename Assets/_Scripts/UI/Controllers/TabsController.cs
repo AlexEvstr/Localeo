@@ -23,6 +23,8 @@ public class TabsController : MonoBehaviour
     private FavoritesService _favorites;
     private ProfileService _profile;
 
+    private readonly Color selectedColor = Color.white;
+    private readonly Color unselectedColor = new Color(0.9f, 0.6f, 0.9f, 1f);
 
     private LocationRepository _locationRepo;
 
@@ -53,6 +55,8 @@ public class TabsController : MonoBehaviour
         restaurantsList.Show(LocationCategory.Restaurant, ShowDetails);
         parksList.Show(LocationCategory.Park, ShowDetails);
         museumsList.Show(LocationCategory.Museum, ShowDetails);
+
+        SetTabColors(allButton, favoritesButton, profileButton);
     }
 
     private void ShowFavoritesTab()
@@ -62,6 +66,8 @@ public class TabsController : MonoBehaviour
         profileTab.SetActive(false);
 
         favoritesView.Show(ShowDetails);
+
+        SetTabColors(favoritesButton, allButton, profileButton);
     }
 
     private void ShowProfileTab()
@@ -69,12 +75,20 @@ public class TabsController : MonoBehaviour
         allLocationsTab.SetActive(false);
         favoritesTab.SetActive(false);
         profileTab.SetActive(true);
+
+        SetTabColors(profileButton, allButton, favoritesButton);
     }
+
+    private void SetTabColors(Button active, Button other1, Button other2)
+    {
+        active.GetComponent<Image>().color = selectedColor;
+        other1.GetComponent<Image>().color = unselectedColor;
+        other2.GetComponent<Image>().color = unselectedColor;
+    }
+
 
     private void ShowDetails(string locationId)
     {
-        Debug.Log($"[TabsController] Opening location: {locationId}");
-
         var location = _locationRepo.GetById(locationId);
         if (location == null)
         {
@@ -90,7 +104,7 @@ public class TabsController : MonoBehaviour
             detailsViewInstance = Instantiate(detailsViewPrefab, canvas.transform);
         }
 
-        detailsViewInstance.Init(_favorites, _profile);
+        detailsViewInstance.Init(_favorites, _profile, profileView);
         detailsViewInstance.Show(location);
     }
 

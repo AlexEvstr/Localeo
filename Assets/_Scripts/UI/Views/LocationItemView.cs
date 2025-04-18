@@ -34,7 +34,6 @@ public class LocationItemView : MonoBehaviour
         detailsButton.onClick.RemoveAllListeners();
         detailsButton.onClick.AddListener(() =>
         {
-            Debug.Log($"[LocationItemView] Open pressed for {locationId}");
             onOpenDetails?.Invoke(locationId);
         });
 

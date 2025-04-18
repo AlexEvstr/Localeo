@@ -1,19 +1,20 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class LocationDetailsView : MonoBehaviour
 {
     [Header("Основное")]
-    //[SerializeField] private GameObject root; // сам LocationDetailsView
     [SerializeField] private Image locationsImage;
     [SerializeField] private Image featureImage;
     [SerializeField] private Text titleText;
     [SerializeField] private Text subtitleText;
     [SerializeField] private Text descriptionText;
+    [SerializeField] private Sprite[] avatarSprites;
 
     [Header("Избранное")]
     [SerializeField] private Button heartButton;
-    [SerializeField] private GameObject heartFull; // иконка "в избранном"
+    [SerializeField] private GameObject heartFull;
 
     [Header("Отзывы")]
     [SerializeField] private Transform reviewsContainer;
@@ -28,36 +29,38 @@ public class LocationDetailsView : MonoBehaviour
 
     [Header("Прочее")]
     [SerializeField] private Button closeBtn;
+    [SerializeField] private Button backBtn;
 
     private LocationSO _location;
     private FavoritesService _favorites;
     private ProfileService _profile;
+    private ProfileView _profileView;
 
-    public void Init(FavoritesService favorites, ProfileService profile)
+    public void Init(FavoritesService favorites, ProfileService profile, ProfileView profileView)
     {
         _favorites = favorites;
         _profile = profile;
+        _profileView = profileView;
     }
 
     public void Show(LocationSO location)
     {
         _location = location;
-        Debug.Log($"[LocationDetailsView] Showing: {location.title}");
         gameObject.SetActive(true);
-        //root.SetActive(true);
         reviewFormRoot.SetActive(false);
         feedbackSent.SetActive(false);
-
         locationsImage.sprite = location.detailImage;
         featureImage.sprite = location.featureImage;
 
         titleText.text = location.title;
         descriptionText.text = location.description;
 
-        subtitleText.gameObject.SetActive(location.category == LocationCategory.Restaurant);
-        subtitleText.text = location.category == LocationCategory.Restaurant ? "Top rated restaurant 🍽" : "";
+        subtitleText.gameObject.SetActive(!string.IsNullOrWhiteSpace(location.subtitle));
+        subtitleText.text = location.subtitle;
+
 
         UpdateHeartIcon();
+
         UpdateReviews();
 
         heartButton.onClick.RemoveAllListeners();
@@ -83,17 +86,21 @@ public class LocationDetailsView : MonoBehaviour
         {
             if (!string.IsNullOrWhiteSpace(reviewInput.text))
             {
-                _profile.AddReview(reviewInput.text);
+                _profile.AddReview(_location.id, reviewInput.text, _profile.AvatarIndex);
+
                 reviewInput.text = "";
                 feedbackSent.SetActive(true);
                 UpdateReviews();
+                _profileView?.Refresh(); // 👈 ОБНОВЛЯЕМ PROFILE VIEW
             }
         });
 
         closeBtn.onClick.RemoveAllListeners();
-        //closeBtn.onClick.AddListener(() => root.SetActive(false));
         closeBtn.onClick.AddListener(() => gameObject.SetActive(false));
+        backBtn.onClick.RemoveAllListeners();
+        backBtn.onClick.AddListener(() => gameObject.SetActive(false));
     }
+
 
     private void UpdateHeartIcon()
     {
@@ -106,15 +113,42 @@ public class LocationDetailsView : MonoBehaviour
         foreach (Transform child in reviewsContainer)
             Destroy(child.gameObject);
 
-        foreach (var review in _profile.Reviews)
+        // 1. Добавляем фейковые
+        foreach (var fake in _location.fakeReviews)
         {
             var item = Instantiate(reviewItemPrefab, reviewsContainer);
             var texts = item.GetComponentsInChildren<Text>();
+            var images = item.transform.GetChild(0).GetComponentsInChildren<Image>();
+
+            if (texts.Length >= 2)
+            {
+                texts[0].text = fake.authorName;
+                texts[1].text = fake.text;
+            }
+            if (images.Length > 0)
+            {
+                images[0].sprite = avatarSprites[fake.avatarIndex];
+            }
+        }
+
+        // 2. Добавляем настоящие отзывы пользователя
+        var reviews = _profile.GetReviewsFor(_location.id);
+        foreach (var review in reviews)
+        {
+            var item = Instantiate(reviewItemPrefab, reviewsContainer);
+            var texts = item.GetComponentsInChildren<Text>();
+            var images = item.transform.GetChild(0).GetComponentsInChildren<Image>();
+
             if (texts.Length >= 2)
             {
                 texts[0].text = "👤 You";
-                texts[1].text = review;
+                texts[1].text = review.text;
+            }
+            if (images.Length > 0)
+            {
+                images[0].sprite = avatarSprites[review.avatarIndex];
             }
         }
     }
+
 }
