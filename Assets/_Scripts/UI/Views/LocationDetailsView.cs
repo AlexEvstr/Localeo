@@ -82,6 +82,7 @@ public class LocationDetailsView : MonoBehaviour
                 _favorites.Add(location.id);
 
             UpdateHeartIcon();
+            SFXManager.Instance.PlayClickSound();
         });
 
         writeReviewBtn.onClick.RemoveAllListeners();
@@ -89,6 +90,7 @@ public class LocationDetailsView : MonoBehaviour
         {
             reviewFormRoot.SetActive(true);
             feedbackSent.SetActive(false);
+            SFXManager.Instance.PlayClickSound();
         });
 
         sendBtn.onClick.RemoveAllListeners();
@@ -102,13 +104,24 @@ public class LocationDetailsView : MonoBehaviour
                 feedbackSent.SetActive(true);
                 UpdateReviews();
                 _profileView?.Refresh(); // 👈 ОБНОВЛЯЕМ PROFILE VIEW
+                SFXManager.Instance.PlayClickSound();
             }
         });
 
         closeBtn.onClick.RemoveAllListeners();
-        closeBtn.onClick.AddListener(() => gameObject.SetActive(false));
+        closeBtn.onClick.AddListener(() =>
+        {
+            gameObject.SetActive(false);
+            SFXManager.Instance.PlayClickSound();
+        });
+        
         backBtn.onClick.RemoveAllListeners();
-        backBtn.onClick.AddListener(() => gameObject.SetActive(false));
+        backBtn.onClick.AddListener(() =>
+        {
+            gameObject.SetActive(false);
+            SFXManager.Instance.PlayClickSound();
+        }
+        );
     }
 
 

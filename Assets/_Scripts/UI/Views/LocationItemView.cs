@@ -35,6 +35,7 @@ public class LocationItemView : MonoBehaviour
         detailsButton.onClick.AddListener(() =>
         {
             onOpenDetails?.Invoke(locationId);
+            SFXManager.Instance.PlayClickSound();
         });
 
 
@@ -44,7 +45,12 @@ public class LocationItemView : MonoBehaviour
         if (mode == LocationItemMode.Favorites && deleteButton != null)
         {
             deleteButton.onClick.RemoveAllListeners();
-            deleteButton.onClick.AddListener(() => onRemoveFavorite?.Invoke(locationId));
+            deleteButton.onClick.AddListener(() =>
+            {
+                onRemoveFavorite?.Invoke(locationId);
+                SFXManager.Instance.PlayClickSound();
+            }
+            );
         }
     }
 }
