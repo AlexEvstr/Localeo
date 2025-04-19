@@ -18,6 +18,7 @@ public class TabsController : MonoBehaviour
     [SerializeField] private FavoritesView favoritesView;
     [SerializeField] private ProfileView profileView;
     [SerializeField] private LocationDetailsView detailsViewPrefab;
+    [SerializeField] private GameObject _enterTab;
     private LocationDetailsView detailsViewInstance;
 
     private FavoritesService _favorites;
@@ -44,6 +45,7 @@ public class TabsController : MonoBehaviour
         profileButton.onClick.AddListener(ShowProfileTab);
 
         ShowAllTab();
+        _enterTab.SetActive(true);
     }
 
     private void ShowAllTab()
@@ -108,5 +110,8 @@ public class TabsController : MonoBehaviour
         detailsViewInstance.Show(location);
     }
 
-
+    public void CloseEnterTab()
+    {
+        _enterTab.SetActive(false);
+    }
 }
