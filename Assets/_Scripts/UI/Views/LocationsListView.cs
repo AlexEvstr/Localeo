@@ -24,7 +24,7 @@ public class LocationsListView : MonoBehaviour
     public void Show(LocationCategory category, System.Action<string> onOpenDetails)
     {
         _onOpenDetails = onOpenDetails;
-        Clear();
+        //Clear();
 
         List<LocationSO> locations = new(_locationRepo.GetByCategory(category));
         foreach (var loc in locations)
